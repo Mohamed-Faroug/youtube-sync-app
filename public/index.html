@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>YouTube Sync Watch</title>
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #000000;
+      --btn-bg: #e0e0e0;
+    }
+
+    .dark {
+      --bg-color: #121212;
+      --text-color: #ffffff;
+      --btn-bg: #333333;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+
+    button, input {
+      background-color: var(--btn-bg);
+      color: var(--text-color);
+      padding: 10px;
+      margin: 5px;
+      border: none;
+      border-radius: 6px;
+    }
+
+    #player {
+      margin-top: 20px;
+    }
+
+    .toggle-container {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="toggle-container">
+    <button id="toggleDarkMode">🌓 Toggle Dark Mode</button>
+  </div>
+
+  <h1>📺 YouTube Sync Watch</h1>
+
+  <h2 id="videoTitle">🎞️ No video loaded</h2>
+
+  <div>
+    <input type="text" id="videoInput" placeholder="Enter YouTube URL or ID" style="width:300px;" />
+    <button id="loadVideoBtn">📺 Load Video</button>
+  </div>
+
+  <div id="player"></div>
+
+  <div>
+    <button id="playBtn">▶️ Play</button>
+    <button id="pauseBtn">⏸️ Pause</button>
+  </div>
+
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="script.js"></script>
+</body>
+</html>
